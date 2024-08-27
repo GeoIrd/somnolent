@@ -1,0 +1,86 @@
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-block: 2rem;
+  gap: 1rem;
+}
+
+.profile-info .credit-icon img,
+.profile-info .credit-icon {
+  height: 30px;
+}
+
+.profile-info .info {
+  padding: 1rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2) 10%,
+    rgba(255, 0, 0, 0)
+  );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+}
+
+.profile-info .info:nth-child(5) {
+  color: white;
+  text-shadow: 0 1px 0 #000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  grid-column: span 2;
+
+  --border-angle: 0turn; /* Pentru animație */
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #213,
+    #112 5%,
+    #112 60%,
+    #213 95%
+  );
+
+  border: solid 1px transparent;
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    #aa89d2,
+    #580054bf 99%,
+    transparent
+  );
+
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box,
+    var(--main-bg) border-box;
+
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.profile-info .info:nth-child(5):hover {
+  animation-play-state: paused;
+}
+
+.profile-info .icon {
+  font-size: var(--fs-600) !important;
+}
+
+.signout {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: rgb(255, 255, 255);
+}

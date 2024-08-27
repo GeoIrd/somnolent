@@ -1,0 +1,38 @@
+.app-bg {
+  position: fixed;
+
+  height: 100%;
+  width: 100%;
+
+  z-index: 3;
+
+  opacity: 0.1;
+}
+
+.app-bg .cloud-1 {
+  position: absolute;
+
+  top: 10%;
+  right: 0;
+}
+
+.app-bg .ellipse {
+  height: 400px;
+  width: 400px;
+
+  top: 0;
+  right: 0;
+
+  transform: translate(50%, -50%);
+
+  position: absolute;
+
+  border: 2px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 50%;
+}
+
+.app-bg .ellipse.ellipse-2 {
+  height: 700px;
+  width: 700px;
+}

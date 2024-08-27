@@ -1,0 +1,130 @@
+.home {
+  padding-inline: var(--pd-x);
+  overflow-x: hidden;
+}
+
+.proof {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  bottom: 6rem;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 4rem;
+  opacity: 0.5;
+}
+
+.proof-item {
+  text-align: center;
+  color: var(--clr-light);
+  flex: 1;
+}
+
+.proof-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.proof-number {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.proof-label {
+  font-size: 0.8rem;
+}
+
+.how-it-works {
+  background: var(--clr-dark);
+  padding-block: var(--pd-y);
+  height: fit-content;
+  min-height: 100dvh;
+
+  overflow-x: hidden;
+}
+
+.how-it-works .cards {
+  margin-block: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.how-it-works .cards .card {
+  box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.4),
+    15px 15px 15px rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(170, 137, 210, 0.313);
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.how-it-works .cards .card .proof-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.howitworks {
+  padding-bottom: var(--pd-y);
+  padding-inline: var(--pd-x);
+  height: fit-content;
+  min-height: 100dvh;
+}
+
+.reviews {
+  padding-block: var(--pd-y);
+  padding-inline: var(--pd-x);
+
+  height: fit-content;
+  min-height: 100dvh;
+}
+
+.contacts {
+  padding-block: var(--pd-y);
+  height: fit-content;
+  padding-inline: var(--pd-x);
+}
+
+.contact-option {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-option .contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: rgba(170, 137, 210, 0.313);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.contact h3 {
+  font-size: var(--fs-500);
+}
+
+.contact-icon {
+  font-size: 2rem;
+}
+
+.contact-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contacts .p-1 {
+  margin-block: 2rem;
+}
+
+.yrd {
+  color: var(--clr-light);
+  text-align: center;
+}

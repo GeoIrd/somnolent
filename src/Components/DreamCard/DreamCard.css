@@ -1,0 +1,77 @@
+.dream-card {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  color: var(--clr-light);
+}
+
+.dream-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+.dream-header > div {
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  display: flex;
+}
+
+.dream-content {
+  font-size: 1rem;
+  color: inherit;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+}
+
+.card-description.collapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limitează la 2 linii */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-description.expanded {
+  display: block;
+}
+
+.card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-block: 0.4rem;
+  margin: 0.4em;
+  float: right;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+
+  text-transform: uppercase;
+}
+
+.card-title::before {
+  content: '"';
+}
+
+.card-title::after {
+  content: '"';
+}
+
+.expand-btn {
+  text-decoration: underline;
+  cursor: pointer;
+}

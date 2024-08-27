@@ -1,0 +1,42 @@
+.controls {
+  display: flex;
+  gap: 1rem;
+  position: relative; /* Adaugă poziționare relativă pentru container */
+}
+
+.controls input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  flex: 2;
+  border-radius: 4rem;
+  padding-right: 2.5rem; /* Adaugă padding la dreapta pentru a lăsa loc iconiței */
+}
+
+.controls .search {
+  position: relative;
+}
+
+.controls select {
+  font-size: 1rem;
+  border-radius: 5rem;
+}
+
+.controls select option {
+  color: black;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem; /* Poziționează iconița la dreapta */
+  top: 50%; /* Centerază vertical iconița */
+  transform: translateY(-50%); /* Corectează poziția verticală */
+  font-size: 1.5rem; /* Ajustează dimensiunea iconiței */
+  cursor: pointer; /* Adaugă cursor pointer pentru a sugera că este clicabil */
+  color: #888; /* Culoarea iconiței */
+}
+
+.controls option {
+  font-size: 1rem;
+  border-radius: 10rem;
+}

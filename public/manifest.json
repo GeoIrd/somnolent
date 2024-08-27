@@ -1,0 +1,16 @@
+{
+  "short_name": "Somnolent AI",
+  "name": "Somnolent AI - Interpretarea Viselor și Analiza Somnului",
+  "description": "Somnolent AI este un instrument avansat pentru interpretarea viselor și analiza somnului, oferind informații detaliate despre semnificația viselor tale.",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/dsqwnuyiw/image/upload/v1711565459/home_shape_sxxfum.webp",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

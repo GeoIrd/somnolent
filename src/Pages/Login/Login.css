@@ -1,0 +1,123 @@
+.otp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-tel-input {
+  background: red !important;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+}
+
+.otp-input {
+  width: 40px !important; /* Lățimea fiecărui input */
+  height: 40px; /* Înălțimea fiecărui input */
+  font-size: 18px; /* Dimensiunea textului */
+  text-align: center; /* Alinierea textului */
+  border-radius: 5px; /* Colțuri rotunjite */
+  margin: 0 10px; /* Spațiul dintre inputuri */
+  border: 1px solid #ccc; /* Bordura inputurilor */
+}
+
+.otp-input:focus {
+  outline: none; /* Elimină bordura de focus implicită */
+  border-color: #007bff; /* Bordura în timpul focusului */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Umbră în timpul focusului */
+}
+
+.login-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+}
+
+.login-btn {
+  display: flex;
+  gap: 1rem;
+
+  padding: 1rem;
+  font-size: var(--fs-500);
+  outline: 0;
+  border: 0;
+}
+
+.google-btn {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.google-btn .icon {
+  color: red;
+}
+
+.facebook-btn {
+  background-color: #1877f2;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.facebook-btn .icon {
+  color: white;
+  scale: 1.4;
+}
+
+.login .line {
+  width: 100%;
+  height: 1px;
+  border: 10px;
+  background: white;
+  margin-block: 0.5rem;
+}
+
+.login-btns p {
+  text-align: left;
+  font-size: var(--fs-500);
+}
+
+.login .p-2 {
+  margin-top: 1rem;
+
+  text-align: left;
+}
+
+.login .btns div {
+  display: flex;
+  width: 100%;
+}
+
+.login .free-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  background: var(--clr-light);
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.login .free-credit img {
+  width: 20px;
+}

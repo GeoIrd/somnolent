@@ -1,0 +1,63 @@
+:root {
+  --ff-primary: "Poppins", sans-serif;
+
+  --fs-300: 0.75rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.6rem;
+  --fs-800: 1.8rem;
+
+  --clr-primary: #3d2d75;
+  --clr-primary-dark: #aa89d2;
+
+  --clr-secondary: #580054bf;
+  --clr-tertiary: #080032;
+
+  --clr-light: #ffffff;
+  --clr-dark: #000000;
+
+  --lg-primary: linear-gradient(
+    to bottom,
+    var(--clr-tertiary) 60%,
+    var(--clr-dark)
+  );
+
+  /* --lg-primary: linear-gradient(
+    to bottom,
+    var(--clr-tertiary) 60%,
+    var(--clr-dark)
+  ); */
+
+  --lg-secondary: linear-gradient(
+    to bottom right,
+    var(--clr-primary),
+    var(--clr-secondary)
+  );
+
+  --br-400: 1rem;
+  --br-600: 2rem;
+  --br-800: 10rem;
+
+  --bs-400: 0px 5px 5px 0px rgba(0, 0, 0, 0.1),
+    0px 5px 7px -15px rgba(0, 0, 0, 0.1);
+
+  --ts-400: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+  --pd-x: 1rem;
+  --pd-y: 5rem;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  font-family: var(--ff-primary);
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-tap-highlight-color: transparent;
+}

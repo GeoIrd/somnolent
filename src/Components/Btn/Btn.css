@@ -1,0 +1,59 @@
+.btn {
+  color: var(--clr-light);
+  font-size: var(--fs-400);
+  font-weight: 600;
+
+  padding: 0.8rem 1.2rem;
+
+  border-radius: var(--br-800);
+  border: 0;
+  outline: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  box-shadow: var(--bs-400);
+
+  margin-inline: auto;
+
+  white-space: nowrap;
+
+  flex: 1;
+}
+
+.btn {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none; /* Remove outline on focus */
+}
+
+.btn.primary {
+  background: var(--clr-primary-dark);
+}
+
+.btn.secondary {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  opacity: 0.7;
+}
+
+.btn.danger {
+  background: red;
+
+  color: var(--clr-light);
+  opacity: 1;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.btns > * {
+  width: 100%;
+}
+
+.btns > * > * {
+  width: 100%;
+}

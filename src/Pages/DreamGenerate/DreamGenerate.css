@@ -1,0 +1,69 @@
+.generate .p-1 {
+  opacity: 0.7;
+}
+
+.generate .input-text {
+  position: relative;
+}
+
+.generate .input-text textarea {
+  width: 100%;
+  padding: 10px;
+  padding-right: 50px;
+  font-size: var(--fs-400);
+  border-radius: 1rem;
+}
+
+.generate .icon {
+  color: black;
+  scale: 1.4;
+}
+
+.generate .send-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+section.generate > div > p {
+  font-size: 0.75rem;
+}
+
+.generate .answer {
+  background: rgb(0, 0, 0);
+  margin-top: 1rem;
+  padding: 1rem;
+  max-height: 25vh;
+  overflow-y: scroll;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem 1rem 0 0;
+
+  overflow-x: hidden;
+}
+
+.generate .action-btns {
+  background: rgb(253, 250, 250);
+  position: relative;
+  height: 3rem;
+
+  border-radius: 0 0 1rem 1rem;
+
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.generate .action-btns .action {
+  color: black;
+  flex: 1;
+}
+
+.generate .action:first-child {
+  border-right: 1px solid rgb(0, 0, 0);
+}
