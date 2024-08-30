@@ -14,8 +14,7 @@ import {
   arrayUnion,
 } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-
-import { useNavigate } from "react-router-dom"; // Importă useNavigate
+import { useNavigate } from "react-router-dom";
 
 const DreamGenerate = ({ setLoading, loading }) => {
   const [inputMessage, setInputMessage] = useState("");
@@ -27,6 +26,7 @@ const DreamGenerate = ({ setLoading, loading }) => {
 
   const auth = getAuth();
   const db = getFirestore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLastDream = async () => {
@@ -38,7 +38,7 @@ const DreamGenerate = ({ setLoading, loading }) => {
         if (userDoc.exists()) {
           const dreams = userDoc.data().dreams || [];
           if (dreams.length > 0) {
-            const lastDream = dreams[dreams.length - 1]; // Ultimul vis
+            const lastDream = dreams[dreams.length - 1];
             setResponseMessage(lastDream.description);
             setLastDreamId(lastDream.id);
             setIsFavorite(lastDream.favorite);
@@ -57,18 +57,24 @@ const DreamGenerate = ({ setLoading, loading }) => {
         const userDoc = await getDoc(userDocRef);
 
         if (!userDoc.exists()) {
-          await setDoc(userDocRef, { credits: 1, dreams: [] });
+          await setDoc(userDocRef, {
+            credits: 1,
+            dreams: [],
+            email: user.email,
+          });
           setCredits(1);
         } else {
-          setCredits(userDoc.data().credits);
+          const data = userDoc.data();
+          setCredits(data.credits);
+          if (!data.email) {
+            await updateDoc(userDocRef, { email: user.email });
+          }
         }
       }
     });
 
     return () => unsubscribe();
   }, [auth, db]);
-
-  const navigate = useNavigate(); // Inițializează useNavigate
 
   const handleSendMessage = async () => {
     const isValidInput = /vis|visat|visez/i.test(inputMessage);
@@ -147,7 +153,6 @@ const DreamGenerate = ({ setLoading, loading }) => {
         toast.error("Nu ai suficiente credite pentru a genera un nou vis.");
         setInputMessage("");
 
-        // Redirecționează la "/buy-credits" după 3 secunde
         setTimeout(() => {
           navigate("/buy-credits");
         }, 3000);
@@ -254,21 +259,15 @@ const DreamGenerate = ({ setLoading, loading }) => {
 };
 
 const formatDream = (text) => {
-  // Formatare pentru textul bold (între "**")
   let formattedText = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-
-  // Formatare pentru listele numerice
   formattedText = formattedText.replace(
     /(\d+)\.\s/g,
     "</br> </br> <p class='numbered-item'> </br>  $1.  "
   );
-
-  // Adăugare de line break după fiecare element de listă
   formattedText = formattedText.replace(
     /(\d+\..*?)(<br \/>|<\/strong>)/g,
     "$1$2"
   );
-
   return formattedText;
 };
 
