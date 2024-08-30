@@ -47,6 +47,30 @@ const Home = () => {
     incrementValue(350, setStarsCount); // Example: 350 stars rating
   }, []);
 
+  useEffect(() => {
+    const checkProofItemPresence = () => {
+      const proofItem = document.querySelector(".proof-item");
+      if (!proofItem) {
+        console.log("proof-item not found. Refreshing...");
+        window.location.reload();
+      }
+    };
+
+    const observer = new MutationObserver(checkProofItemPresence);
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Initial check
+    checkProofItemPresence();
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <section className="home">
@@ -198,7 +222,6 @@ const Home = () => {
                       icon={faWhatsapp}
                       className="contact-icon"
                     />
-
                     <h3>Număr de Whatsapp</h3>
                   </div>
                 </Link>

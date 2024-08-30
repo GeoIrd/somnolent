@@ -96,8 +96,13 @@ const DreamGenerate = ({ setLoading, loading }) => {
           model: "mistral-large-latest",
           messages: [
             {
+              role: "system",
+              content:
+                "Ești un interpret de vise. Oferă explicații clare și simple ale viselor.",
+            },
+            {
               role: "user",
-              content: `Bună! Eu sunt SomnolentAI, asistentul tău pentru interpretarea viselor. Ai avut următorul vis: '${inputMessage}'. Permite-mi să îți explic ce semnifică acest vis. Ofer analiză detaliată, structurat într-o listă numerotată, fiecare punct explicând simbolurile și temele principale din visul tău. Să începem!`,
+              content: `Visul "${inputMessage}", explica intr-un limbaj usor de inteles ce inseamna. Tu esti un interpretor de vise.`,
             },
           ],
           language: "ro",
@@ -249,24 +254,19 @@ const DreamGenerate = ({ setLoading, loading }) => {
 };
 
 const formatDream = (text) => {
+  // Formatare pentru textul bold (între "**")
   let formattedText = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-
-  // Eliminare simbol ": -"
-  formattedText = formattedText.replace(/:\s*-\s*/g, "");
-
-  // Formatare pentru titlurile marcate cu "###"
-  formattedText = formattedText.replace(/###\s(.*?)\n/g, "<h3>$1</h3><br />");
 
   // Formatare pentru listele numerice
   formattedText = formattedText.replace(
     /(\d+)\.\s/g,
-    "<p class='numbered-item'>$1. "
+    "</br> </br> <p class='numbered-item'> </br>  $1.  "
   );
 
   // Adăugare de line break după fiecare element de listă
   formattedText = formattedText.replace(
     /(\d+\..*?)(<br \/>|<\/strong>)/g,
-    "<br /><br />$1</p><br />$2"
+    "$1$2"
   );
 
   return formattedText;
