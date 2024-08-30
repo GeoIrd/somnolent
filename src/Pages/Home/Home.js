@@ -12,6 +12,7 @@ import {
   faChartLine,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import {
@@ -20,12 +21,12 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import SimpleSlider from "../../Components/Slider/Slider";
+import TikTokWarning from "../../Components/TikTokWarning/TikTokWarning";
 
 const Home = () => {
   const [usersCount, setUsersCount] = useState(0);
   const [dreamsCount, setDreamsCount] = useState(0);
   const [starsCount, setStarsCount] = useState(0);
-  const [showBrowserWarning, setShowBrowserWarning] = useState(false);
 
   useEffect(() => {
     const incrementValue = (endValue, setter, interval = 50) => {
@@ -48,19 +49,33 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const detectTikTokBrowser = () => {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-      if (/tiktok/.test(userAgent.toLowerCase())) {
-        setShowBrowserWarning(true);
+    const checkProofItemPresence = () => {
+      const proofItem = document.querySelector(".proof-item");
+      if (!proofItem) {
+        console.log("proof-item not found. Refreshing...");
+        window.location.reload();
       }
     };
 
-    detectTikTokBrowser();
+    const observer = new MutationObserver(checkProofItemPresence);
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Initial check
+    checkProofItemPresence();
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <>
+      <TikTokWarning></TikTokWarning>
+
       <section className="home">
         <div className="content">
           <h1 className="text-1">
@@ -106,22 +121,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {showBrowserWarning && (
-        <div className="browser-warning">
-          <p>
-            Se pare că folosești browserul TikTok. Pentru cea mai bună
-            experiență, deschide această pagină în browserul tău preferat.
-          </p>
-          <button
-            onClick={() =>
-              (window.location.href = "https://www.somnolentai.com")
-            }
-          >
-            Deschide în browserul tău
-          </button>
-        </div>
-      )}
 
       <div className="how-it-works" id="how-it-works">
         <div className="howitworks">

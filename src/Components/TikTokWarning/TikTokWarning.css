@@ -1,0 +1,42 @@
+.oauth-warning {
+  padding: 20px;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin: 20px 0;
+
+  width: 100dvw;
+  height: 100dvh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  z-index: 10000;
+  background: red;
+}
+
+.oauth-warning p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.redirect-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.redirect-button:hover {
+  background-color: #0056b3;
+}
