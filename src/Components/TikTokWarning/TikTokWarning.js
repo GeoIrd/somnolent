@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./TikTokWarning.css";
 
 const TikTokWarning = () => {
-  const [isTikTokBrowser, setIsTikTokBrowser] = useState(true);
+  const [isTikTokBrowser, setIsTikTokBrowser] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
