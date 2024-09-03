@@ -246,7 +246,7 @@ const DreamGenerate = ({ setLoading, loading }) => {
                   {isFavorite ? "Scoate de la favorite" : "Adaugă la favorite"}
                 </div>
                 <div className="action action2" onClick={handleNewDreamClick}>
-                  Generează un nou vis
+                  Generează alt vis
                 </div>
               </div>
             </div>

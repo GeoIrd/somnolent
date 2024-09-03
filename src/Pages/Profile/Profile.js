@@ -63,7 +63,6 @@ const Profile = () => {
     <section className="profile">
       <div className="content">
         <h2 className="text-2">Contul tău:</h2>
-        <h3>Bine ai venit, {user?.displayName}!</h3>
         <div className="profile-info">
           <Link to="/">
             <div className="info">

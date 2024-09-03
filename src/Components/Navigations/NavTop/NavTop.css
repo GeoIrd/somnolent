@@ -46,8 +46,9 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 10rem;
   color: var(--clr-light);
   font-weight: 600;
+  font-size: 0.9rem;
 }
