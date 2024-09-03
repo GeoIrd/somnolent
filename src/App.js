@@ -13,6 +13,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import BuyCredits from "./Pages/BuyCredits/BuyCredits";
 import Profile from "./Pages/Profile/Profile";
 import SuccessPage from "./Pages/SuccessPage/SuccesPage";
+import Social from "./Pages/Social/Social";
 
 function App() {
   const [loading, setLoading] = useState(false); // Starea pentru loading
@@ -23,6 +24,8 @@ function App() {
         <NavTop></NavTop>
         <AppBg></AppBg>
         <Routes>
+          <Route path="/social" element={<Social></Social>}></Route>
+
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/" element={<Home></Home>}></Route>
           <Route

@@ -1,0 +1,46 @@
+.social {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding-top: 0;
+
+  z-index: 1000;
+}
+
+.social img {
+  border-radius: 10px;
+}
+
+.social .arrow {
+  width: 100px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transform: rotate(20deg);
+
+  filter: invert();
+}
+
+.text {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.text h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dots {
+  width: 100%;
+}
+
+.social-img {
+  width: 100%;
+}
